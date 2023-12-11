@@ -1,4 +1,0 @@
-先建数据库叫system-orderfood,在数据库执行sql文件，修改application.yml里的密码(如果你的密码是root就不用改)
-配置自己本地的的maven
-启动项目
-picture里的图片要放在D:/upload/picture目录下
