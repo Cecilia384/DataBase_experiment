@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><!--记住 我的电脑这里只能是http才能出来小鸟-->
+<mapper namespace="com.zpy.mapper.ProductMapper">
+
+
+    <select id="queryNum" resultType="com.zpy.pojo.CountNumber">
+        SELECT f.store as name ,SUM(o.count) as count from food f,f_order o where o.fid=f.id
+        GROUP BY f.store order by count desc
+    </select>
+
+    <select id="queryTotal" resultType="com.zpy.pojo.CountNumber">
+        SELECT f.food_name as name ,SUM(o.total) as count from food f,f_order o where o.fid=f.id
+        GROUP BY f.food_name order by count desc
+    </select>
+</mapper>

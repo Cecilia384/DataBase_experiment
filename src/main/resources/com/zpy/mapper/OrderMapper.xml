@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><!--记住 我的电脑这里只能是http才能出来小鸟-->
+<mapper namespace="com.zpy.mapper.OrderMapper">
+
+    <resultMap id="order" type="com.zpy.pojo.Order">
+        <id property="id" column="id"/>
+        <result property="cid" column="cid"/>
+        <result column="pid" property="fid"/>
+        <result property="orderTime" column="order_time"/>
+        <result property="count" column="count"/>
+        <result property="total" column="total"/>
+        <result property="status" column="status"/>
+        <result property="isorder" column="isorder"/>
+        <result property="totalMoney" column="totalMoney"/>
+        <result property="foodId" column="foodId"/>
+        <association property="customer">
+            <id column="id" property="id"/>
+            <result property="customerName" column="customer_name"/>
+            <result column="email" property="email"/>
+            <result column="phone" property="phone"/>
+            <result column="address" property="address"/>
+            <result property="cimage" column="cimage"/>
+        </association>
+        <association property="food">
+            <id column="id" property="id"/>
+            <result property="foodName" column="food_name"/>
+            <result property="price" column="price"/>
+            <result property="stock" column="stock"/>
+            <result property="store" column="store"/>
+            <result column="status" property="status"/>
+            <result property="descr" column="descr"/>
+            <result column="fimage" property="fimage"/>
+        </association>
+    </resultMap>
+
+
+    <select id="listOrder" resultType="com.zpy.pojo.Order" resultMap="order">
+        select o.id,f.food_name,f.fimage,f.price, o.order_time,c.address,c.customer_name,c.cimage, o.count, o.total,o.status,c.email
+        from customer c,food f,f_order o
+        <where>
+            AND c.id=o.cid and f.id=o.fid and o.isorder=1
+
+            <if test="id != null and id!='' ">
+                and o.id=#{id}
+            </if>
+        </where>
+        order by o.status
+    </select>
+
+    <select id="getOrderById" resultType="com.zpy.pojo.Order" resultMap="order">
+          select  o.id,c.customer_name,f.food_name from
+          f_order o,customer c,food f where o.cid=c.id and o.fid=f.id and o.id=#{id}
+    </select>
+    <select id="listMyOrders" resultType="com.zpy.pojo.Order" resultMap="order">
+        select f.food_name,f.fimage,o.count,o.total,o.order_time,o.status,o.id,c.address
+        from f_order o,customer c,food f
+        <where>
+            AND c.id=o.cid and f.id=o.fid and o.isorder=1 and o.cid=#{userId}
+            <if test="foodName != null and foodName!='' ">
+                and f.food_name like  concat('%',#{foodName},'%')
+            </if>
+        </where>
+        order by o.status asc
+    </select>
+    <select id="myCart" resultType="com.zpy.pojo.Order" resultMap="order">
+        select f.food_name,f.fimage,f.price,o.count,o.total,o.id
+        from f_order o,food f,customer c where o.fid=f.id and o.cid=c.id and c.id=#{userId} and o.isorder=0
+    </select>
+
+
+
+    <update id="payOrder">
+        update f_order set isorder=1 where cid=#{userId} and isorder=0
+    </update>
+
+    <select id="myCollection" resultType="com.zpy.pojo.Order" resultMap="order">
+        select o.id, f.id as foodId, f.food_name,f.fimage,f.price,f.stock
+        from f_order o,food f,customer c where o.fid=f.id and o.cid=c.id and c.id=#{userId} and o.isorder=2
+    </select>
+    <select id="invoice" resultType="com.zpy.pojo.Order" resultMap="order">
+        select o.id,c.customer_name,c.email,c.address,c.phone,o.count,o.total,o.order_time,f.food_name,f.store,f.price
+         from f_order o,customer c,food f where o.fid=f.id and o.cid=c.id and o.id=#{orderId}
+    </select>
+
+</mapper>
