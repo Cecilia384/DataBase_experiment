@@ -280,7 +280,7 @@
             <polyline points="2 17 12 22 22 17"></polyline>
             <polyline points="2 12 12 17 22 12"></polyline>
           </svg>
-          </span><span class="menu-text">店铺管理 </span></a>
+          </span><span class="menu-text">餐区管理 </span></a>
         </li>
 
         <li><a th:href="@{/stock/listStock}"><span class="icon-menu feather-icon">
@@ -313,12 +313,12 @@
         <div class="colxl-12 col-lg-12 col-md-12 col-sm-12 col-12">
           <div class="page-title-wrapper">
             <div class="page-title-box">
-              <h4 class="page-title bold">Dashboard</h4>
+              <h4 class="page-title bold">春田花花大酒店给您最优质的员工待遇</h4>
             </div>
             <div class="breadcrumb-list">
               <ul>
                 <li class="breadcrumb-link"><a href="javascript:void(0);"><i class="fas fa-home mr-2"></i>Dashboard</a></li>
-                <li class="breadcrumb-link active">Admin</li>
+                <li class="breadcrumb-link active">管理员，你好！</li>
               </ul>
             </div>
           </div>
@@ -408,8 +408,8 @@
                 </svg>
               </div>
               <div class="icon-info-text">
-                <h5 class="ad-title">Happy Customers</h5>
-                <h4 class="ad-card-title">66k</h4>
+                <h5 class="ad-title">服务态度热情</h5>
+                <h4 class="ad-card-title">全网好评数 <br> 66K</h4>
               </div>
             </div>
           </div>
@@ -426,8 +426,8 @@
                 </svg>
               </div>
               <div class="icon-info-text">
-                <h5 class="ad-title">Daily Orders</h5>
-                <h4 class="ad-card-title">15k</h4>
+                <h5 class="ad-title">豪华型酒店</h5>
+                <h4 class="ad-card-title">入选2023年必住榜</h4>
               </div>
             </div>
           </div>
@@ -447,8 +447,8 @@
                 </svg>
               </div>
               <div class="icon-info-text">
-                <h5 class="ad-title">Total Sales</h5>
-                <h4 class="ad-card-title">420k</h4>
+                <h5 class="ad-title">高于91%同类酒店</h5>
+                <h4 class="ad-card-title">大众点评 <br> 评分4.9</h4>
               </div>
             </div>
           </div>
@@ -471,8 +471,8 @@
                 </svg>
               </div>
               <div class="icon-info-text">
-                <h5 class="ad-title">Total Revenue</h5>
-                <h4 class="ad-card-title">10k</h4>
+                <h5 class="ad-title">中西美食精粹</h5>
+                <h4 class="ad-card-title">食物好评率97%</h4>
               </div>
             </div>
           </div>
@@ -483,123 +483,16 @@
         <div class="col-xl-12 col-lg-12 col-md-12">
           <div class="card chart-card">
             <div class="card-header">
-              <h4 class="has-btn">Total Revanue <span>
-                <button type="button" class="btn btn-primary squer-btn sm-btn">Download</button>
-                </span></h4>
+              <h4 class="has-btn">厨房监控猫猫播播间<span>
+          <!-- 如果您想要保留下载按钮，您可以取消这段注释 -->
+                <!-- <button type="button" class="btn btn-primary squer-btn sm-btn">Download</button> -->
+          </span></h4>
             </div>
             <div class="card-body">
               <div class="row">
-                <div class="col-xl-8 col-lg-12 col-md-12">
-                  <div class="chart-holder">
-                    <div id="chartD"></div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-12 col-md-12">
-                  <div class="revenue-wrapper">
-                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                      <li class="nav-item"><a class="nav-link active" id="tab1-tab" data-toggle="pill" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Weekly</a></li>
-                      <li class="nav-item"><a class="nav-link" id="tab2-tab" data-toggle="pill" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Monthly</a></li>
-                      <li class="nav-item"><a class="nav-link" id="tab3-tab" data-toggle="pill" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Yearly</a></li>
-                    </ul>
-                    <div class="tab-content" id="pills-tabContent">
-                      <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-                        <div class="revenue-info-wrap">
-                          <table>
-                            <tbody>
-                            <tr>
-                              <td><i class="far fa-chart-bar mr-2 icon-only"></i>Total Sales</td>
-                              <td>5995<sup class="medium ml-2 txt-green">+15%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="fas fa-user-friends mr-2 icon-only"></i>Total Customers</td>
-                              <td>5894<sup class="medium ml-2 txt-green">+15%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="fas fa-hand-holding-usd mr-2 icon-only"></i>Total Income</td>
-                              <td>4453<sup class="medium ml-2 txt-green">+25%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="fas fa-signal mr-2 icon-only"></i>Total Expense</td>
-                              <td>7454<sup class="medium ml-2 txt-red">+2%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="far fa-heart mr-2 icon-only"></i>Total Likes</td>
-                              <td>14454<sup class="medium ml-2 txt-red">+5%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="far fa-frown-open mr-2 icon-only"></i>Tax Paid</td>
-                              <td>786<sup class="medium ml-2 txt-green">+5%</sup></td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                      <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-                        <div class="revenue-info-wrap">
-                          <table>
-                            <tbody>
-                            <tr>
-                              <td><i class="far fa-chart-bar mr-2 icon-only"></i>Total Sales</td>
-                              <td>5995<sup class="medium ml-2 txt-green">+15%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="fas fa-user-friends mr-2 icon-only"></i>Total Customers</td>
-                              <td>5894<sup class="medium ml-2 txt-green">+15%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="fas fa-hand-holding-usd mr-2 icon-only"></i>Total Income</td>
-                              <td>4453<sup class="medium ml-2 txt-green">+25%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="fas fa-signal mr-2 icon-only"></i>Total Expense</td>
-                              <td>7454<sup class="medium ml-2 txt-red">+2%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="far fa-heart mr-2 icon-only"></i>Total Likes</td>
-                              <td>14454<sup class="medium ml-2 txt-red">+5%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="far fa-frown-open mr-2 icon-only"></i>Tax Paid</td>
-                              <td>786<sup class="medium ml-2 txt-green">+5%</sup></td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                      <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-                        <div class="revenue-info-wrap">
-                          <table>
-                            <tbody>
-                            <tr>
-                              <td><i class="far fa-chart-bar mr-2 icon-only"></i>Total Sales</td>
-                              <td>5995<sup class="medium ml-2 txt-green">+15%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="fas fa-user-friends mr-2 icon-only"></i>Total Customers</td>
-                              <td>5894<sup class="medium ml-2 txt-green">+15%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="fas fa-hand-holding-usd mr-2 icon-only"></i>Total Income</td>
-                              <td>4453<sup class="medium ml-2 txt-green">+25%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="fas fa-signal mr-2 icon-only"></i>Total Expense</td>
-                              <td>7454<sup class="medium ml-2 txt-red">+2%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="far fa-heart mr-2 icon-only"></i>Total Likes</td>
-                              <td>14454<sup class="medium ml-2 txt-red">+5%</sup></td>
-                            </tr>
-                            <tr>
-                              <td><i class="far fa-frown-open mr-2 icon-only"></i>Tax Paid</td>
-                              <td>786<sup class="medium ml-2 txt-green">+5%</sup></td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                  <!-- 这里放置Bilibili直播的iframe -->
+                  <iframe style="width: 100%; height: 500px;" src="https://www.bilibili.com/blackboard/live/live-activity-player.html?cid=21147363&quality=0" frameborder="no" framespacing="0" scrolling="no" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
                 </div>
               </div>
             </div>
@@ -607,7 +500,7 @@
         </div>
       </div>
       <!-- Products Orders Start -->
-      <div class="row">
+      <!--div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
           <div class="card chart-card">
             <div class="card-header">
@@ -897,7 +790,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div-->
       <div class="ad-footer-btm">
         <p>Copyright 2021 © SplashDash All Rights By <a href="www.jq22.com/index.html">jq22</a>.</p>
       </div>
