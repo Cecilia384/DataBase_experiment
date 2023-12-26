@@ -150,7 +150,7 @@ public class OrderController {
 
     @RequestMapping("sendMessage/{email}/{foodName}/{orderId}")
     public String sendMessage(@PathVariable String email,@PathVariable String foodName,@PathVariable Integer orderId){
-        MailUtils.sendMail(email,"您订购的"+foodName+"正在配送中，请注意查收","餐馆邮件");
+        MailUtils.sendMail(email,"您订购的"+foodName+"正在准备中，请稍等","餐馆邮件");
         Order byId = orderService.getById(orderId);
         byId.setStatus(1);
         orderService.updateById(byId);

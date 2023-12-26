@@ -385,7 +385,7 @@
                                             <th>菜品名称</th>
                                             <th>数量</th>
                                             <th>总额</th>
-                                            <th>收货住址</th>
+                                            <th>房间号</th>
                                             <th>下单时间</th>
                                             <th>订单状态</th>
                                             <th style="text-align: center">操作</th>
@@ -405,14 +405,14 @@
                                             <td th:text="${#dates.format(order.orderTime)}"></td>
 
                                             <td>
-                                                <label th:if="${order.status}==0" class="mb-0 badge badge-light" title="" data-original-title="Pending">未派送</label>
-                                                <label th:if="${order.status}==1" class="mb-0 badge badge-success" title="Pending">派送中</label>
-                                                <label th:if="${order.status}==2" class="mb-0 badge badge-secondary" title="Pending">已收货</label>
+                                                <label th:if="${order.status}==0" class="mb-0 badge badge-light" title="" data-original-title="Pending">未准备</label>
+                                                <label th:if="${order.status}==1" class="mb-0 badge badge-success" title="Pending">准备中</label>
+                                                <label th:if="${order.status}==2" class="mb-0 badge badge-secondary" title="Pending">已完成</label>
                                             </td>
                                             <td style="text-align: center;width: 250px;padding-right: 15px">
                                                 <a type="button" th:if="${order.status}==0" class="effect-btn sm-btn btn btn-primary mt-2 mr-2" th:href="@{'/normalUser/preUpdateMyOrder/'+${order.id}}"><i class="far fa-edit "></i>修改</a>
                                                 <a type="button" th:if="${order.status}==2 " class="effect-btn sm-btn btn btn-warning mt-2 mr-2" th:href="@{'/normalUser/invoice/'+${order.id}}"><i class="far fa-edit "></i>打印发票</a>
-                                                <a type="button" th:if="${order.status}==1 " class="effect-btn sm-btn btn btn-success mt-2 mr-2" th:href="@{'/normalUser/confirmOrder/'+${order.id}}"><i class="far fa-edit "></i>确认收货</a>
+                                                <a type="button" th:if="${order.status}==1 " class="effect-btn sm-btn btn btn-success mt-2 mr-2" th:href="@{'/normalUser/confirmOrder/'+${order.id}}"><i class="far fa-edit "></i>确认完成</a>
                                                 <a type="button" class="effect-btn sm-btn btn btn-danger mt-2 mr-2" th:href="@{'/normalUser/delMyOrder/'+${order.id}}"><i class="far fa-trash-alt "></i>删除</a>
                                             </td>
                                         </tr>

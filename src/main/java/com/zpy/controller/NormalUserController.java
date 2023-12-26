@@ -237,7 +237,7 @@ public class NormalUserController {
         qw.eq("isorder",0);
         Order one = orderService.getOne(qw);
         if (one!=null){
-            session.setAttribute("msg","此菜品已加入购物车");
+            session.setAttribute("msg","此菜品已加入小餐车");
             return "redirect:/normalUser/listFood";
         }
         Food food = foodService.getById(foodId);
