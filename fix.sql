@@ -90,7 +90,7 @@ DROP TABLE IF EXISTS `food`;
 CREATE TABLE `food` (
   `id` int NOT NULL AUTO_INCREMENT COMMENT '菜品id',
   `food_name` varchar(255) NOT NULL COMMENT '菜品名称',
-  `store` varchar(255) NOT NULL COMMENT '所属店铺',
+  `store` varchar(255) NOT NULL COMMENT '所属餐区',
   `price` double(5,2) NOT NULL COMMENT '单价',
   `stock` int NOT NULL COMMENT '容量',
   `descr` varchar(255) NOT NULL COMMENT '简介',
@@ -121,9 +121,9 @@ DROP TABLE IF EXISTS `store`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `store` (
-  `id` int NOT NULL AUTO_INCREMENT COMMENT '店铺id',
-  `store_name` varchar(255) NOT NULL COMMENT '店铺名称',
-  `descr` varchar(255) NOT NULL COMMENT '店铺简介',
+  `id` int NOT NULL AUTO_INCREMENT COMMENT '餐区id',
+  `store_name` varchar(255) NOT NULL COMMENT '餐区名称',
+  `descr` varchar(255) NOT NULL COMMENT '餐区简介',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;

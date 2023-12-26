@@ -283,7 +283,7 @@
             <polyline points="2 17 12 22 22 17"></polyline>
             <polyline points="2 12 12 17 22 12"></polyline>
           </svg>
-          </span><span class="menu-text">店铺管理 </span></a>
+          </span><span class="menu-text">餐区管理 </span></a>
                 </li>
 
                 <li><a th:href="@{/stock/listStock}"><span class="icon-menu feather-icon">
@@ -334,23 +334,23 @@
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>店铺信息</h4>
-                                <p class="card-desc">请输入修改店铺详细信息</p>
+                                <h4>餐区信息</h4>
+                                <p class="card-desc">请输入修改餐区详细信息</p>
                             </div>
                             <div class="card-body">
                                 <form method="post" th:action="@{/store/updateStore}">
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <input type="hidden" th:value="${store.id}" name="id"/>
                                         <div class="form-group row">
-                                            <label class="col-md-2 col-form-label">店铺名称</label>
+                                            <label class="col-md-2 col-form-label">餐区名称</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="text" placeholder="店铺名称" name="/" th:value="${store.storeName}">
+                                                <input class="form-control" type="text" placeholder="餐区名称" name="/" th:value="${store.storeName}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-md-2 col-form-label">店铺简介</label>
+                                            <label class="col-md-2 col-form-label">餐区简介</label>
                                             <div class="col-md-10">
-                                                <textarea class="form-control" placeholder="店铺简介" th:text="${store.descr}" name="descr" th:value="${store.descr}"></textarea>
+                                                <textarea class="form-control" placeholder="餐区简介" th:text="${store.descr}" name="descr" th:value="${store.descr}"></textarea>
                                             </div>
                                         </div>
 

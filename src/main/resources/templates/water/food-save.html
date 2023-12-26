@@ -347,11 +347,11 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-md-2 col-form-label">所属店铺</label>
+                                            <label class="col-md-2 col-form-label">所属餐区</label>
                                             <div class="col-md-10">
                                                 <select class="select2 form-control" name="store" >
                                                     <option disabled="disabled" hidden="hidden"
-                                                            selected="selected">--选择店铺：</option>
+                                                            selected="selected">--选择餐区：</option>
                                                     <option th:each="store : ${storeList}"
                                                             th:value="${store.storeName}"
                                                             th:text="${store.storeName}"/>
