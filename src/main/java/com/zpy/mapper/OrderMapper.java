@@ -21,4 +21,5 @@ public interface OrderMapper extends BaseMapper<Order> {
     List<Order> myCollection(Integer userId);
 
     Order invoice(Integer orderId);
+    List<Order> getOrdersBetween(String startTime, String endTime);
 }

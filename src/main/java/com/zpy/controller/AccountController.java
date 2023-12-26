@@ -6,6 +6,7 @@ import com.zpy.pojo.Customer;
 import com.zpy.pojo.User;
 import com.zpy.service.AccountService;
 import com.zpy.service.CustomerService;
+import com.zpy.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,48 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.Reader;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@Controller
+class ReportController {
+
+    @Autowired
+    private ReportService reportService; // 服务层，处理数据相关逻辑
+
+    @GetMapping("/export/daily")
+    public void exportDailyReport(HttpServletResponse response) throws IOException {
+        // 设置响应的内容类型为CSV
+        response.setContentType("text/csv");
+        response.setHeader("Content-Disposition", "attachment; filename=daily_report.csv");
+
+        // 调用服务层的方法，将数据写入到响应的输出流中
+        reportService.writeDailyReportToCsv(response.getWriter());
+    }
+
+    @GetMapping("/export/monthly")
+    public void exportMonthlyReport(HttpServletResponse response) throws IOException {
+        // 设置响应的内容类型为CSV
+        response.setContentType("text/csv");
+        response.setHeader("Content-Disposition", "attachment; filename=monthly_report.csv");
+
+        // 调用服务层的方法，将数据写入到响应的输出流中
+        reportService.writeMonthlyReportToCsv(response.getWriter());
+    }
+
+    @GetMapping("/export/annual")
+    public void exportAnnualReport(HttpServletResponse response) throws IOException {
+        // 设置响应的内容类型为CSV
+        response.setContentType("text/csv");
+        response.setHeader("Content-Disposition", "attachment; filename=annual_report.csv");
+
+        // 调用服务层的方法，将数据写入到响应的输出流中
+        reportService.writeAnnualReportToCsv(response.getWriter());
+    }
+
+}
+
 
 @Controller
 public class AccountController {
@@ -145,6 +188,7 @@ public class AccountController {
     public String count1(){
         return "chart_total";
     }
+
 
     //跳转到修改个人信息的页面
     @RequestMapping("profile")

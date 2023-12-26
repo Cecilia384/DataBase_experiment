@@ -451,7 +451,7 @@
                                             <td th:text="${order.customer.address}"></td>
                                             <td th:text="${#dates.format(order.orderTime)}"></td>
                                             <td>
-                                                <label th:if="${order.status}==0" class="mb-0 badge badge-light" title="" data-original-title="Pending">房未完成</label>
+                                                <label th:if="${order.status}==0" class="mb-0 badge badge-light" title="" data-original-title="Pending">仍未完成</label>
                                                 <label th:if="${order.status}==1" class="mb-0 badge badge-success" title="Pending">准备中</label>
                                                 <label th:if="${order.status}==2" class="mb-0 badge badge-secondary" title="Pending">已完成</label>
 

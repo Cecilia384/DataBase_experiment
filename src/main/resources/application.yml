@@ -7,7 +7,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/system-orderfood?useUnicode=true&characterEncoding=utf8
     username: root
-    password: 153153ea
+    password: hz2003811
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       min-idle: 5

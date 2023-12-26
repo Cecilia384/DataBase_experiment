@@ -83,5 +83,10 @@
         select o.id,c.customer_name,c.email,c.address,c.phone,o.count,o.total,o.order_time,f.food_name,f.store,f.price
          from f_order o,customer c,food f where o.fid=f.id and o.cid=c.id and o.id=#{orderId}
     </select>
-
+    <select id="getOrdersBetween" resultMap="order">
+        SELECT * FROM f_order o
+        <where>
+            o.order_time BETWEEN #{startTime} AND #{endTime}
+        </where>
+    </select>
 </mapper>

@@ -31,6 +31,25 @@
 
     <!--axios-->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>.export-buttons {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .export-buttons button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .export-buttons button:hover {
+        background-color: #45a049;
+    }</style>
 </head>
 <body>
 <div class="loader">
@@ -507,6 +526,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="export-buttons">
+                    <button id="daily-report">日结账报表</button>
+                    <button id="monthly-report">月结账报表</button>
+                    <button id="annual-report">年结账报表</button>
+                </div>
             </div>
 
 
@@ -663,5 +687,18 @@
 <script th:src="@{/js/apexchart/control-chart-apexcharts.js}">
 
 </script><script th:src="@{/js/custom.js}"></script>
+<script>
+    document.getElementById('daily-report').addEventListener('click', function() {
+        window.location.href = '/export/daily';
+    });
+
+    document.getElementById('monthly-report').addEventListener('click', function() {
+        window.location.href = '/export/monthly';
+    });
+
+    document.getElementById('annual-report').addEventListener('click', function() {
+        window.location.href = '/export/annual';
+    });
+</script>
 </body>
 </html>
